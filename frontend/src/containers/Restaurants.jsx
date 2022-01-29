@@ -74,14 +74,14 @@ export const Restaurants = () => {
   useEffect(() => {
     dispatch({ type: restaurantsActionTypes.FETCHING });
     fetchRestaurants()
-    .then((data) =>
-      dispatch({
-        type: restaurantsActionTypes.FETCH_SUCCESS,
-        payload: {
-          restaurants: data.restaurants
-        }
-      })
-    )
+			.then((data) => {
+				dispatch({
+					type: restaurantsActionTypes.FETCH_SUCCESS,
+					payload: {
+						restaurants: data.restaurants
+					}
+				})
+			})
   }, [])
 
   return (
